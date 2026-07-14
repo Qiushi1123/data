@@ -1,0 +1,5 @@
+*.part-* binary
+*.gz binary
+*.sh text eol=lf
+*.md text eol=lf
+SHA256SUMS text eol=lf
