@@ -1,0 +1,45 @@
+{
+  "_comment": "100-step Stage2 smoke run on /mnt/sharp uploaded 3dgsdata_stage2_ready.",
+  "internal_resolution": 1536,
+  "checkpoint_interval": 25,
+  "perceptual_memory_opt": true,
+  "requires_renderer": true,
+  "losses": {
+    "color": 1.0,
+    "perceptual": 2.0,
+    "alpha": 1.0,
+    "tv": 0.5,
+    "grad": 0.25,
+    "delta": 1.0,
+    "splat": 1.0
+  },
+  "optim": {
+    "warmup_steps": 20,
+    "peak_lr": 2e-06,
+    "floor_lr": 5e-07
+  },
+  "freeze": {
+    "freeze_patch_encoder": true,
+    "freeze_all_norm_layers": true,
+    "train_lowres_encoder": false,
+    "train_dpt_decoder": false,
+    "train_alignment": false,
+    "train_gaussian_decoder": true,
+    "train_composer": true
+  },
+  "stage": {
+    "name": "stage2",
+    "total_steps": 100,
+    "active_losses": [
+      "color",
+      "alpha",
+      "perceptual",
+      "tv",
+      "grad",
+      "delta",
+      "splat"
+    ],
+    "pseudo_view_max_disparity": 0.025,
+    "pseudo_depth_mode": "none"
+  }
+}
